@@ -1,0 +1,20 @@
+[
+  {
+    "id": "tokyo",
+    "name": "Tokyo",
+    "thumbnail": "/assets/tokyo.jpeg",
+    "description": "Explore Japan’s vibrant capital city with a mix of tradition and technology."
+  },
+  {
+    "id": "kyoto",
+    "name": "Kyoto",
+    "thumbnail": "/assets/kyoto.jpeg",
+    "description": "The heart of Japanese culture, famous for temples, tea houses, and Geishas."
+  },
+  {
+    "id": "hokkaido",
+    "name": "Hokkaido",
+    "thumbnail": "/assets/hokkaido.jpeg",
+    "description": "Known for its powder snow, natural beauty, and delicious seafood."
+  }
+]

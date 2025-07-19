@@ -1,0 +1,87 @@
+[
+  {
+    "region": "Kanto",
+    "cities": [
+      {
+        "name": "Tokyo",
+        "spots": [
+          {
+            "id": "tokyo",
+            "name": "Tokyo",
+            "thumbnail": "/assets/tokyo.jpeg",
+            "description": "A vibrant city blending modernity with tradition.",
+            "season": ["Spring", "Autumn"],
+            "category": ["Modern", "Shopping", "Temples"],
+            "popularity": "Popular"
+          }
+        ]
+      },
+      {
+        "name": "Yokohama",
+        "spots": [
+          {
+            "id": "yokohama",
+            "name": "Yokohama",
+            "thumbnail": "/assets/yokohama.jpeg",
+            "description": "A port city known for waterfront views and ramen museum.",
+            "season": ["Summer"],
+            "category": ["Food", "Waterfront"],
+            "popularity": "Hidden Gem"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "region": "Kansai",
+    "cities": [
+      {
+        "name": "Kyoto",
+        "spots": [
+          {
+            "id": "kyoto",
+            "name": "Kyoto",
+            "thumbnail": "/assets/kyoto.jpeg",
+            "description": "The cultural heart of Japan filled with temples and shrines.",
+            "season": ["Spring", "Autumn"],
+            "category": ["Temples", "Culture", "Nature"],
+            "popularity": "Popular"
+          }
+        ]
+      },
+      {
+        "name": "Osaka",
+        "spots": [
+          {
+            "id": "osaka",
+            "name": "Osaka",
+            "thumbnail": "/assets/osaka.jpeg",
+            "description": "Known for its street food, comedy, and vibrant nightlife.",
+            "season": ["Winter", "Autumn"],
+            "category": ["Food", "Nightlife", "Shopping"],
+            "popularity": "Popular"
+          }
+        ]
+      },
+      {
+        "region": "Hokkaido",
+        "cities": [
+          {
+            "name": "Sapporo",
+            "spots": [
+              {
+                "id": "sapporo",
+                "name": "Sapporo",
+                "thumbnail": "/assets/sapporo.jpeg",
+                "description": "Famous for its beer, skiing, and the annual snow festival.",
+                "season": ["Winter"],
+                "category": ["Winter Sports", "Food"],
+                "popularity": "Popular"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

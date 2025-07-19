@@ -1,0 +1,60 @@
+[
+  {
+    "id": "kyoto",
+    "name": "Kyoto",
+    "thumbnail": "/assets/kyoto.jpeg",
+    "description": "A city known for temples, traditions, and cherry blossoms.",
+    "bestTimeToVisit": "March to May and October to November",
+    "weather": "Mild with seasonal rainfall",
+    "attractions": [
+      "Fushimi Inari Shrine",
+      "Kinkaku-ji (Golden Pavilion)",
+      "Arashiyama Bamboo Grove"
+    ],
+    "access": "From Tokyo: 2.5 hours by Shinkansen",
+    "localFoods": [
+      "Kaiseki Ryori (traditional multi-course meal)",
+      "Yudofu (tofu hot pot)",
+      "Matcha sweets"
+    ],
+    "gallery": [
+      "/assets/kyoto1.jpeg",
+      "/assets/kyoto2.jpeg",
+      "/assets/kyoto3.jpeg"
+    ],
+    "travelTips": [
+      "Buy a prepaid transit card for buses and trains.",
+      "Visit temples early in the morning to avoid crowds.",
+      "Respect local customs at shrines and temples."
+    ]
+  },
+  {
+    "id": "tokyo",
+    "name": "Tokyo",
+    "thumbnail": "/assets/tokyo.jpeg",
+    "description": "A modern metropolis full of life, culture, and neon.",
+    "bestTimeToVisit": "March to May and September to November",
+    "weather": "Hot summers and mild winters",
+    "attractions": [
+      "Shibuya Crossing",
+      "Tokyo Tower",
+      "Asakusa Temple"
+    ],
+    "access": "Direct flights to Narita/Haneda; Shinkansen from Osaka",
+    "localFoods": [
+      "Sushi",
+      "Ramen",
+      "Tempura"
+    ],
+    "gallery": [
+      "/assets/tokyo1.jpeg",
+      "/assets/tokyo2.jpeg",
+      "/assets/tokyo3.jpeg"
+    ],
+    "travelTips": [
+      "Learn basic Japanese greetings.",
+      "Use the subway to avoid traffic jams.",
+      "Carry cash, as some places do not accept cards."
+    ]
+  }
+]

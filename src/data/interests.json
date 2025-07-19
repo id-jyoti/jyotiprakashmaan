@@ -1,0 +1,38 @@
+[
+  {
+    "id": "nature",
+    "title": "Nature & Outdoors",
+    "description": "Explore mountains, lakes, and serene landscapes across Japan.",
+    "image": "/assets/interests/nature.jpg"
+  },
+  {
+    "id": "temples",
+    "title": "Temples & Shrines",
+    "description": "Visit ancient shrines, spiritual paths, and cultural heritage sites.",
+    "image": "/assets/interests/temples.jpg"
+  },
+  {
+    "id": "food",
+    "title": "Local Food",
+    "description": "Taste Japan’s rich culinary scene from sushi to street snacks.",
+    "image": "/assets/interests/food.jpg"
+  },
+  {
+    "id": "history",
+    "title": "History & Culture",
+    "description": "Discover castles, samurai stories, and preserved towns.",
+    "image": "/assets/interests/history.jpg"
+  },
+  {
+    "id": "festivals",
+    "title": "Festivals",
+    "description": "Experience Japan’s vibrant seasonal festivals and parades.",
+    "image": "/assets/interests/festivals.jpg"
+  },
+  {
+    "id": "modern",
+    "title": "Modern Attractions",
+    "description": "Explore futuristic cities, tech centers, and pop culture hotspots.",
+    "image": "/assets/interests/modern.jpg"
+  }
+]
