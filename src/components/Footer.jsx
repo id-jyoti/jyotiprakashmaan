@@ -1,16 +1,11 @@
-function Footer() {
+export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-800 text-white py-6 mt-10">
-      <div className="container mx-auto flex justify-between flex-col md:flex-row items-center text-sm">
-        <p>&copy; {new Date().getFullYear()} Japan Travel Guide</p>
-        <div className="flex gap-4 mt-4 md:mt-0">
-          <a href="#" className="hover:underline">Privacy</a>
-          <a href="#" className="hover:underline">Terms</a>
-          <button className="bg-gray-700 px-2 py-1 rounded">EN</button>
-        </div>
-      </div>
+    <footer className="py-6 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
+      <p>
+        © {year} • Built with ❤️ using React, Vite, TypeScript, Tailwind & Framer Motion
+      </p>
     </footer>
   );
 }
-
-export default Footer;

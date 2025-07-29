@@ -1,53 +1,46 @@
-import { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
 
-const slides = [
-  {
-    image: '/assets/tokyo.jpeg',
-    title: 'Discover Vibrant Tokyo',
-    subtitle: 'Skyscrapers, sushi, and shrines',
-  },
-  {
-    image: '/assets/kyoto.jpeg',
-    title: 'Explore Cultural Kyoto',
-    subtitle: 'Temples, gardens, and geisha',
-  },
-  {
-    image: '/assets/hokkaido.jpeg',
-    title: 'Escape to Hokkaido',
-    subtitle: 'Snow, serenity, and seafood',
-  },
-];
-
-export default function HeroSection() {
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000); // Rotate every 5 seconds
-    return () => clearInterval(interval);
-  }, []);
-
+const HeroSection = () => {
   return (
-    <div className="relative w-full h-[60vh] overflow-hidden rounded-b-3xl shadow-md">
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-            index === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
-          }`}
-        >
-          <img
-            src={slide.image}
-            alt={slide.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center text-white px-4">
-            <h2 className="text-3xl md:text-5xl font-bold">{slide.title}</h2>
-            <p className="text-lg md:text-2xl mt-2">{slide.subtitle}</p>
-          </div>
-        </div>
-      ))}
-    </div>
+    <section className="min-h-screen flex flex-col justify-center items-center px-4 text-center relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-[-100px] left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-purple-500 opacity-30 blur-[120px] rounded-full z-[-1]" />
+
+      {/* Animated Intro */}
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4"
+      >
+        Hey, I’m{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+          Your Name
+        </span>
+      </motion.h1>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-6"
+      >
+        I build smooth, high-performance web apps that blend design with
+        engineering. Frontend-focused, user-obsessed.
+      </motion.p>
+
+      {/* CTA */}
+      <motion.a
+        href="#projects"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3, delay: 0.4 }}
+        className="inline-block bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform"
+      >
+        View My Work →
+      </motion.a>
+    </section>
   );
-}
+};
+
+export default HeroSection;
