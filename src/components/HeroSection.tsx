@@ -56,10 +56,10 @@ const HeroSection = () => {
         className="flex flex-col sm:flex-row gap-4 z-10"
       >
         <a
-          href="#projects"
+          href="#about"
           className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform"
         >
-          View My Work →
+          About Me →
         </a>
         <a
           href="#contact"
