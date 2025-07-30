@@ -1,41 +1,86 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
 
-export default function ContactSection() {
+const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Add logic to handle form submission (e.g., send to email or API)
+    alert("Thank you! Your message has been sent.");
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
-    <section
-      id="contact"
-      className="py-20 px-4 max-w-3xl mx-auto text-center"
-    >
-      <motion.h2
-        className="text-3xl font-semibold mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        Contact
-      </motion.h2>
+    <section id="contact" className="py-20 px-4 max-w-2xl mx-auto">
+      <h2 className="text-3xl font-semibold text-center mb-10 text-gray-900 dark:text-white">
+        Let's Talk
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <label htmlFor="name" className="block mb-2 font-medium text-gray-700 dark:text-gray-300">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white dark:bg-gray-800 dark:text-white"
+          />
+        </div>
 
-      <motion.p
-        className="text-gray-700 dark:text-gray-300 mb-8"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        I’m currently open to freelance or full-time opportunities. Feel free to reach out if you think we can work together!
-      </motion.p>
+        <div>
+          <label htmlFor="email" className="block mb-2 font-medium text-gray-700 dark:text-gray-300">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white dark:bg-gray-800 dark:text-white"
+          />
+        </div>
 
-      <motion.a
-        href="mailto:youremail@example.com"
-        className="inline-block bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full font-semibold transition-colors duration-300 hover:bg-gray-800 dark:hover:bg-gray-300"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        Say Hello 👋
-      </motion.a>
+        <div>
+          <label htmlFor="message" className="block mb-2 font-medium text-gray-700 dark:text-gray-300">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={5}
+            value={formData.message}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white dark:bg-gray-800 dark:text-white"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300"
+        >
+          Send Message
+        </button>
+      </form>
     </section>
   );
-}
+};
+
+export default ContactSection;

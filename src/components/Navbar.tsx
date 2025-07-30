@@ -1,94 +1,49 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-scroll";
-
-const navLinks = [
-  { name: "Home", to: "hero" },
-  { name: "About", to: "about" },
-  { name: "Experience", to: "experience" },
-  { name: "Projects", to: "projects" },
-  { name: "Contact", to: "contact" },
-];
+// components/Navbar.tsx
+import { useState } from "react";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const sections = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About Me" },
+    { id: "care", label: "Things I Care About" },
+    { id: "skills", label: "Creative Skills Inside Me" },
+    { id: "experience", label: "Where I've Worked" },
+    { id: "artist", label: "Artist Inside Me" },
+    { id: "publications", label: "Publications" },
+    { id: "contact", label: "Contact" },
+  ];
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={`fixed w-full z-50 px-6 py-4 ${
-        scrolled
-          ? "bg-white/70 dark:bg-black/70 backdrop-blur-md shadow-md"
-          : "bg-transparent"
-      } transition-all duration-300`}
-    >
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-          {"</>"} Jyoti
-        </h1>
+    <nav className="fixed top-4 right-4 z-50">
+      <button
+        onClick={toggleMenu}
+        className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full text-2xl shadow-md"
+        aria-label="Toggle Menu"
+      >
+        <HiOutlineMenuAlt3 />
+      </button>
 
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-900 dark:text-white text-2xl"
-            aria-label="Toggle Menu"
-          >
-            {isOpen ? "✖" : "☰"}
-          </button>
-        </div>
-
-        <ul className="hidden md:flex space-x-8 text-sm font-medium">
-          {navLinks.map((link) => (
-            <li key={link.to}>
-              <Link
-                to={link.to}
-                smooth={true}
-                duration={500}
-                className="cursor-pointer text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+      {isOpen && (
+        <ul className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded shadow-lg py-2 text-sm text-gray-800 dark:text-white">
+          {sections.map((section) => (
+            <li key={section.id}>
+              <a
+                href={`#${section.id}`}
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
               >
-                {link.name}
-              </Link>
+                {section.label}
+              </a>
             </li>
           ))}
         </ul>
-      </div>
-
-      <AnimatePresence>
-        {isOpen && (
-          <motion.ul
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            exit={{ height: 0 }}
-            className="md:hidden mt-4 flex flex-col space-y-4 bg-white dark:bg-black rounded-lg p-4 shadow-lg"
-          >
-            {navLinks.map((link) => (
-              <li key={link.to}>
-                <Link
-                  to={link.to}
-                  smooth={true}
-                  duration={500}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </motion.ul>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+      )}
+    </nav>
   );
 };
 

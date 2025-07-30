@@ -8,13 +8,28 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Travel App",
-    description: "A single-page React app with dynamic search, filters, and detailed destination pages.",
-    link: "https://yourprojecturl.com",
+    title: "Personal Portfolio Website",
+    description:
+      "A portfolio site showcasing my frontend development skills. Built with React, TypeScript, Tailwind CSS, and Framer Motion. Includes dark mode and scroll animations.",
+    link: "https://github.com/yourusername/portfolio", // Replace with actual GitHub or live link
   },
   {
-    title: "Portfolio",
-    description: "This website you're seeing right now. Built with Vite + React + Tailwind + TypeScript.",
+    title: "Emproto Technologies – Internship Project",
+    description:
+      "Worked on reusable UI components and implemented product features using React and Tailwind CSS.",
+    link: "https://github.com/yourusername/emproto-intern-project", // Optional: only if allowed
+  },
+  {
+    title: "Edugo Abroad – Internship Project",
+    description:
+      "Helped develop frontend features for their education platform. Integrated REST APIs and improved UI responsiveness.",
+    // No link if private/under NDA
+  },
+  {
+    title: "Firebase Auth App (Training)",
+    description:
+      "Created a login/register system using Firebase Authentication with protected routes and form validation.",
+    link: "https://github.com/yourusername/firebase-auth-app",
   },
 ];
 
@@ -59,8 +74,12 @@ export default function ProjectsSection() {
             className="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-shadow"
             whileHover={{ scale: 1.02 }}
           >
-            <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white">{project.title}</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+            <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white">
+              {project.title}
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
+              {project.description}
+            </p>
             {project.link && (
               <a
                 href={project.link}
