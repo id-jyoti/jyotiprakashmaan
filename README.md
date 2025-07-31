@@ -21,8 +21,8 @@
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/id-jyoti/hostly-app.git
-cd hostly-app
+git clone https://github.com/id-jyoti/jyotiprakashmaan
+cd jyotiprakashmaan
 
 # 2. Install dependencies
 bun install
