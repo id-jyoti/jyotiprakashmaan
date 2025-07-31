@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 import { useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
@@ -6,6 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   const sections = [
     { id: "home", label: "Home" },
@@ -30,12 +30,15 @@ const Navbar = () => {
       </button>
 
       {isOpen && (
-        <ul className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded shadow-lg py-2 text-sm text-gray-800 dark:text-white">
+        <ul
+          className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded shadow-lg py-2 text-sm text-gray-800 dark:text-white"
+          onMouseLeave={closeMenu} // Auto-hide on mouse leave
+        >
           {sections.map((section) => (
             <li key={section.id}>
               <a
                 href={`#${section.id}`}
-                onClick={() => setIsOpen(false)}
+                onClick={closeMenu}
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 {section.label}
