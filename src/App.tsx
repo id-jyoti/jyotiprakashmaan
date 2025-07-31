@@ -1,6 +1,7 @@
-// src/App.tsx
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
@@ -9,6 +10,7 @@ import SkillsSection from "./components/SkillsSection";
 import PublicationsSection from "./components/PublicationsSection";
 import WorkExperienceSection from "./components/WorkExperienceSection";
 import ArtistInsideMeSection from "./components/ArtistInsideMeSection";
+import MyContributions from "./components/MyContributions";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import ThankYou from "./pages/ThankYou";
@@ -34,7 +36,7 @@ function App() {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* Open Graph for social preview */}
+        {/* Open Graph */}
         <meta property="og:title" content="Jyoti Prakash Maan | Frontend Developer" />
         <meta
           property="og:description"
@@ -59,17 +61,29 @@ function App() {
       </Helmet>
 
       <Navbar />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <ThingsICareAboutSection />
-        <SkillsSection />
-        <WorkExperienceSection />
-        <PublicationsSection />
-        <ArtistInsideMeSection />
-        <ContactSection />
-        <ThankYou />
-      </main>
+
+      <Routes>
+        {/* Main Page */}
+        <Route
+          path="/"
+          element={
+            <>
+              <HeroSection />
+              <AboutSection />
+              <ThingsICareAboutSection />
+              <SkillsSection />
+              <WorkExperienceSection />
+              <PublicationsSection />
+              <ArtistInsideMeSection />
+              <MyContributions />
+              <ContactSection />
+            </>
+          }
+        />
+        {/* Thank You Page */}
+        <Route path="/thank-you" element={<ThankYou />} />
+      </Routes>
+
       <Footer />
     </div>
   );

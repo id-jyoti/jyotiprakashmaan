@@ -1,21 +1,28 @@
 // src/components/HeroSection.tsx
 import { motion } from "framer-motion";
-import bgImage from "../assets/hero-bg.png";
+import bgVideo from "../assets/bg.mp4";
 
 const HeroSection = () => {
   return (
-    <section
-      className="min-h-screen flex flex-col justify-center items-center px-4 text-center relative overflow-hidden bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-      }}
-    >
-      {/* Background Overlay (optional tint) */}
-      <div className="absolute inset-0 bg-white dark:bg-black opacity-40 z-[-1]" />
+    <section className="min-h-screen flex flex-col justify-center items-center px-4 text-center relative overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-3]"
+      >
+        <source src={bgVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      {/* Floating background effect */}
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-white dark:bg-black opacity-40 z-[-2]" />
+
+      {/* Optional Floating Motion Layer */}
       <motion.div
-        className="absolute inset-0 z-[-2]"
+        className="absolute inset-0 z-[-1]"
         initial={{ y: 0 }}
         animate={{ y: [0, 20, 0] }}
         transition={{
@@ -25,7 +32,7 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Animated Header */}
+      {/* Main Content */}
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -38,17 +45,15 @@ const HeroSection = () => {
         </span>
       </motion.h1>
 
-      {/* Animated Paragraph */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
         className="max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-6 z-10"
       >
-        A frontend developer with 6+ years of diverse experience — passionate about building smooth, accessible, and elegant web experiences that bring ideas to life.
+        A frontend developer with diverse experience passionate about building smooth, accessible, and elegant web experiences that bring ideas to life.
       </motion.p>
 
-      {/* CTA Buttons */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
