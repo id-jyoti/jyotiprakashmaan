@@ -18,10 +18,10 @@ const logos = [
   { src: ehotspot, alt: "Engineering Hotspot" },
   { src: police, alt: "Rajasthan Police" },
   { src: smcet, alt: "SMCET Jaipur" },
-  { src: rtu, alt: "RTU Colleges" },
+  { src: rtu, alt: "GECA Ajmer" },
   { src: inditex, alt: "Inditex" },
   { src: desire, alt: "Desire Info Soft Pvt Ltd" },
-  { src: devyani, alt: "Devyani International Ltd" },
+  { src: devyani, alt: "" },
   
 ];
 
