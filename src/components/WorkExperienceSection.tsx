@@ -1,3 +1,10 @@
+// src/components/WorkExperienceSection.tsx
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import devyani from "../assets/DIL.jpg";
 import desire from "../assets/DISPL.jpeg";
 import inditex from "../assets/Inditex.jpg";
@@ -17,30 +24,40 @@ const logos = [
 ];
 
 export default function WorkExperienceSection() {
-  const scrollingLogos = [...logos, ...logos]; // Duplicate for continuous scroll
-
   return (
-    <section id="work" className="py-20 px-4 bg-white dark:bg-gray-900 overflow-hidden">
+    <section id="work" className="py-20 px-4 bg-white dark:bg-gray-900">
       <h2 className="text-3xl font-semibold text-center mb-10 text-gray-900 dark:text-white">
         Where I’ve Worked
       </h2>
 
-      <div className="relative w-full overflow-hidden">
-        <div className="flex animate-marquee gap-10 w-[200%]">
-          {scrollingLogos.map((logo, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-40 h-40 flex items-center justify-center rounded-full bg-white shadow-md"
-            >
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={30}
+        slidesPerView={3}
+        navigation
+        pagination={{ clickable: true }}
+        breakpoints={{
+          320: { slidesPerView: 1 },
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        className="max-w-6xl mx-auto"
+      >
+        {logos.map((logo, index) => (
+          <SwiperSlide key={index}>
+            <div className="flex items-center justify-center w-40 h-40 mx-auto rounded-full bg-white shadow-md hover:scale-105 transition">
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="w-full h-full object-contain rounded-full transition hover:scale-105"
+                className="rounded-full w-full h-full object-contain"
               />
             </div>
-          ))}
-        </div>
-      </div>
+            <p className="text-center mt-4 text-sm text-gray-700 dark:text-gray-300">
+              {logo.alt}
+            </p>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }
