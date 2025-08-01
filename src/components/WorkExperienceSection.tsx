@@ -5,22 +5,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import devyani from "../assets/DIL.jpg";
-import desire from "../assets/DISPL.jpeg";
-import inditex from "../assets/Inditex.jpg";
-import rtu from "../assets/RTU.jpg";
-import smcet from "../assets/SMCET.png";
-import ehotspot from "../assets/EH.jpeg";
 import police from "../assets/RP.webp";
+import ehotspot from "../assets/EH.jpeg";
+import smcet from "../assets/SMCET.png";
+import rtu from "../assets/RTU.jpg";
+import inditex from "../assets/Inditex.jpg";
+import desire from "../assets/DISPL.jpeg";
+import devyani from "../assets/DIL.jpg";
+
 
 const logos = [
-  { src: devyani, alt: "Devyani International Ltd" },
-  { src: desire, alt: "Desire Info Soft Pvt Ltd" },
-  { src: inditex, alt: "Inditex" },
-  { src: rtu, alt: "RTU Colleges" },
-  { src: smcet, alt: "SMCET Jaipur" },
   { src: ehotspot, alt: "Engineering Hotspot" },
   { src: police, alt: "Rajasthan Police" },
+  { src: smcet, alt: "SMCET Jaipur" },
+  { src: rtu, alt: "RTU Colleges" },
+  { src: inditex, alt: "Inditex" },
+  { src: desire, alt: "Desire Info Soft Pvt Ltd" },
+  { src: devyani, alt: "Devyani International Ltd" },
+  
 ];
 
 export default function WorkExperienceSection() {
