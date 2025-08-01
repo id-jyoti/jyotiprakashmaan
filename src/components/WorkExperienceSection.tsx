@@ -15,12 +15,12 @@ import devyani from "../assets/DIL.jpg";
 
 
 const logos = [
-  { src: ehotspot, alt: "Engineering Hotspot" },
-  { src: police, alt: "Rajasthan Police" },
-  { src: smcet, alt: "SMCET Jaipur" },
-  { src: rtu, alt: "GECA Ajmer" },
-  { src: inditex, alt: "Inditex" },
-  { src: desire, alt: "Desire Info Soft Pvt Ltd" },
+  { src: ehotspot, alt: "" },
+  { src: police, alt: "" },
+  { src: smcet, alt: "" },
+  { src: rtu, alt: "" },
+  { src: inditex, alt: "" },
+  { src: desire, alt: "" },
   { src: devyani, alt: "" },
   
 ];
